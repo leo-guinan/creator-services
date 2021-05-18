@@ -1,4 +1,12 @@
 {
+  "auth": {
+    "creatorservices2886811c": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  },
   "api": {
     "creatorservices": {
       "service": "AppSync",
@@ -9,7 +17,7 @@
             "authenticationType": "API_KEY",
             "apiKeyConfig": {
               "apiKeyExpirationDays": 7,
-              "description": "creator services api key"
+              "description": ""
             }
           },
           "additionalAuthenticationProviders": []
@@ -17,16 +25,8 @@
       }
     }
   },
-  "auth": {
-    "creatorservicesc7b02454": {
-      "service": "Cognito",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": [],
-      "customAuth": false
-    }
-  },
   "storage": {
-    "creatorservices": {
+    "creatorservicesstorage": {
       "service": "S3",
       "providerPlugin": "awscloudformation"
     }
