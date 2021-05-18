@@ -1,12 +1,4 @@
 {
-  "auth": {
-    "creatorservicesa4b7536e": {
-      "service": "Cognito",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": [],
-      "customAuth": false
-    }
-  },
   "api": {
     "creatorservices": {
       "service": "AppSync",
@@ -25,8 +17,16 @@
       }
     }
   },
+  "auth": {
+    "creatorservicesc7b02454": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  },
   "storage": {
-    "creatorservicesuserdata": {
+    "creatorservices": {
       "service": "S3",
       "providerPlugin": "awscloudformation"
     }
