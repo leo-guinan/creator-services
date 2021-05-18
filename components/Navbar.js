@@ -27,6 +27,11 @@ const Navbar = () => {
                 <a className="nav-link">Edit User</a>
               </Link>
             </li>
+            <li className="nav-item">
+              <Link href="/add-creator-service">
+                <a className="nav-link">Add Creator Service</a>
+              </Link>
+            </li>
             <button
               className="btn btn-danger"
               type="button"

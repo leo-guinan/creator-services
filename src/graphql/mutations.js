@@ -12,6 +12,18 @@ export const createUser = /* GraphQL */ `
       lastName
       description
       image
+      creatorServices {
+        items {
+          id
+          serviceName
+          contactPhoneNumber
+          contactEmail
+          serviceDescription
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -28,6 +40,18 @@ export const updateUser = /* GraphQL */ `
       lastName
       description
       image
+      creatorServices {
+        items {
+          id
+          serviceName
+          contactPhoneNumber
+          contactEmail
+          serviceDescription
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -44,6 +68,102 @@ export const deleteUser = /* GraphQL */ `
       lastName
       description
       image
+      creatorServices {
+        items {
+          id
+          serviceName
+          contactPhoneNumber
+          contactEmail
+          serviceDescription
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createCreatorService = /* GraphQL */ `
+  mutation CreateCreatorService(
+    $input: CreateCreatorServiceInput!
+    $condition: ModelCreatorServiceConditionInput
+  ) {
+    createCreatorService(input: $input, condition: $condition) {
+      id
+      serviceName
+      contactPhoneNumber
+      contactEmail
+      serviceDescription
+      user {
+        id
+        firstName
+        lastName
+        description
+        image
+        creatorServices {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateCreatorService = /* GraphQL */ `
+  mutation UpdateCreatorService(
+    $input: UpdateCreatorServiceInput!
+    $condition: ModelCreatorServiceConditionInput
+  ) {
+    updateCreatorService(input: $input, condition: $condition) {
+      id
+      serviceName
+      contactPhoneNumber
+      contactEmail
+      serviceDescription
+      user {
+        id
+        firstName
+        lastName
+        description
+        image
+        creatorServices {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteCreatorService = /* GraphQL */ `
+  mutation DeleteCreatorService(
+    $input: DeleteCreatorServiceInput!
+    $condition: ModelCreatorServiceConditionInput
+  ) {
+    deleteCreatorService(input: $input, condition: $condition) {
+      id
+      serviceName
+      contactPhoneNumber
+      contactEmail
+      serviceDescription
+      user {
+        id
+        firstName
+        lastName
+        description
+        image
+        creatorServices {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
     }

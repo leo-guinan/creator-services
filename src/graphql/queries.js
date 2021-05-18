@@ -9,6 +9,18 @@ export const getUser = /* GraphQL */ `
       lastName
       description
       image
+      creatorServices {
+        items {
+          id
+          serviceName
+          contactPhoneNumber
+          contactEmail
+          serviceDescription
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -27,6 +39,63 @@ export const listUsers = /* GraphQL */ `
         lastName
         description
         image
+        creatorServices {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getCreatorService = /* GraphQL */ `
+  query GetCreatorService($id: ID!) {
+    getCreatorService(id: $id) {
+      id
+      serviceName
+      contactPhoneNumber
+      contactEmail
+      serviceDescription
+      user {
+        id
+        firstName
+        lastName
+        description
+        image
+        creatorServices {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listCreatorServices = /* GraphQL */ `
+  query ListCreatorServices(
+    $filter: ModelCreatorServiceFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listCreatorServices(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        serviceName
+        contactPhoneNumber
+        contactEmail
+        serviceDescription
+        user {
+          id
+          firstName
+          lastName
+          description
+          image
+          createdAt
+          updatedAt
+        }
         createdAt
         updatedAt
       }

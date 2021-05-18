@@ -4,4 +4,15 @@ type User @model {
   lastName: String
   description: String
   image: String
+  creatorServices: [CreatorService] @connection(keyName: "UserCreatorServices")
+}
+
+type CreatorService @model {
+  id: ID!
+  serviceName: String
+  contactPhoneNumber: String
+  contactEmail: String
+  serviceDescription: String
+  user: User @connection(keyName: "UserCreatorServices")
+
 }
